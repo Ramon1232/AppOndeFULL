@@ -1,26 +1,18 @@
-<nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand">
-            <i class="fas fa-bus"></i>
-            RutasApp
-        </a>        
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link" [routerLink]="['/rutas/',idUser]">Home</a>
-                <a class="nav-link" [routerLink]="['/cuenta/',idUser]">Mi cuenta</a>
-                <a class="nav-link" [routerLink]="['/desarrolladores/',idUser]">Acerca de</a>                
-            </div>            
-        </div>
+<nav class="navbar" style="background-color: #e3f2fd; text-align: left;">
+    <!-- Navbar content -->
+    <div class="container-fluid" >
+        <img src="../../../favicon.ico" alt="">
+        <a class="navbar-brand" href="principal.component.html">ONDE!</a>
+         <a class="navbar-brand" href="../rutas/rutas.component.html">Rutas</a>
+        <a class="navbar-brand" href="../desarrolladores/desarrolladores.component.html">Acerca de</a>  
         <span class="navbar-text">
-            <button class="btn btn-outline-light" type="button"
-            routerLink="/usuario">
-                Cerrar sesión
-            </button>
-        </span>
-    </div>
+          <button class="btn btn-outline-light" type="button"
+          routerLink="/usuario" style="background-color:blue ;">
+              Cerrar sesión
+          </button>
+      </span>
+      </div>
+  
   </nav>
   
   <div class ="p-3 mb-2 text-white">
@@ -42,17 +34,6 @@
     <div class = "text-white">
         <form (ngSubmit)="guardar( f )"
                           #f="ngForm">
-            <div class="form-group">
-                <label>Firebase ID</label>
-                <input type="text"
-                             class="form-control"
-                             placeholder="Firebase ID"
-                             [(ngModel)] = "llanitosDest.idLla"
-                             name="idLla"
-                             disabled="disabled">  
-                <small class="form-text text-muted">Este campo se llena de forma automática</small>
-            </div>
-
             <div class="form-group mt-2">
                 <label>Destino</label>
                 <input type="text"

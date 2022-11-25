@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONDE!</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png" />
   </head>
   <body>
     <header >
@@ -13,43 +14,36 @@
 
     </header>
   
+  
     <!--<div class="wrapper">
       <div class="box-inputs"></div>
         </div>-->
     <!--BArra de navegacion-->
 
-<nav class="navbar" style="background-color: #b1ccdf; text-align: left;">
+<nav class="navbar" style="background-color: #e3f2fd; text-align: left;">
   <!-- Navbar content -->
   <div class="container-fluid" >
-    <img src="../../../assets/image/logo.png" alt=" Logotipo">
+    
+    <img src="../../../favicon.ico" alt="">
       <a class="navbar-brand" href="principal.component.html">ONDE!</a>
       <a class="navbar-brand" href="../usuario/usuario.component.html">Inicio sesion/ Registrarse</a>
          <a class="navbar-brand" href="../desarrolladores/desarrolladores.component.html">Acerca de</a>
       
     </div>
+  
 
     <!--Mapa-->
 </nav>
 <br>
 <nav>
-
-  <div class="conatainer">
-    <form class="Rutas de Tepic">
-      <select class="form-select" name="rutas" #myNameElem>
-        <option value="none" selected>Selecciona la Ruta</option>
-        <option value="rutaInsurgentes">Ruta: Insurgentes</option>
-        <option value="rutaAllende">Ruta: Allende</option>
-        <option value="rutaMexico">Ruta: México</option>
-        <option value="rutaBellavista">Ruta: Bellavista</option>
-        <option value="rutaProgeso5">Ruta: Progeso 5</option>
-      </select>
-    </form>
-  </div>
-
-  <div class="wrapper">
-    <button (click)="drawRoute()" class="btn-route">Seleccionar Ruta</button>
-    <button (click)="testBorrar()" class="btn-route">Borrar ruta</button>
-    <button (click)="testLocalizacion()" class="btn-route">Mostrar mi ubicacion</button>
+  <div class="list-group" id="menu">
+    <button type="button" class="list-group-item list-group-item-action" aria-current="true">
+      Ruta Sauces
+    </button>
+    <button type="button"  class="list-group-item list-group-item-action">Ruta Allende</button>
+    <button type="button" class="list-group-item list-group-item-action">Ruta Bellavista</button>
+    <button type="button" class="list-group-item list-group-item-action">Ediciion de boton</button>
+    <button type="button" class="list-group-item list-group-item-action">Ediciion de boton</button>
   </div>
 
   <div class="wrapper">

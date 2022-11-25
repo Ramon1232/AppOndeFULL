@@ -1,8 +1,7 @@
-
 <nav class="navbar" style="background-color: #e3f2fd; text-align: left;">
     <!-- Navbar content -->
     <div class="container-fluid" >
-      <img src="SegundoLogo.png" alt=" Logotipo">
+        <img src="../../../favicon.ico" alt="">
         <a class="navbar-brand" href="principal.component.html">ONDE!</a>
         <a class="nav-link" [routerLink]="['/cuenta/',idUser]">Mi cuenta</a>
         <a class="nav-link" [routerLink]="['/desarrolladores/',idUser]">Acerca de</a>                
@@ -35,17 +34,6 @@
     <div>
         <form (ngSubmit)="guardar( f )"
                           #f="ngForm">
-            <div class="form-group">
-                <label>Firebase ID</label>
-                <input type="text"
-                             class="form-control"
-                             placeholder="Firebase ID"
-                             [(ngModel)] = "ruta.id"
-                             name="id"
-                             disabled="disabled">  
-                <small class="form-text text-muted">Este campo se llena de forma automática</small>
-            </div>
-
             <div class="form-group mt-2">
                 <label>Ruta</label>
                 <input type="text"
