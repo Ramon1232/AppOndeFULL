@@ -1,0 +1,141 @@
+<!--Encabezado-->
+<nav class="navbar" style="background-color: #e3f2fd; text-align: left;">
+    <!-- Navbar content -->
+    <div class="container-fluid" >
+      <img src="../../../assets/image/logo.png" alt=" Logotipo">
+        <a class="navbar-brand" href="principal.component.html">ONDE!</a>
+        <a class="nav-link" [routerLink]="['/cuenta/',idUser]">Mi cuenta</a>
+        <a class="nav-link active">Rutas</a>  
+        <a class="nav-link" [routerLink]="['/desarrolladores/',idUser]">Acerca de</a> 
+        <span class="navbar-text">
+          <button class="btn btn-outline-light" type="button"
+          routerLink="/usuario" style="background-color:blue ;">
+              Cerrar sesión
+          </button>
+      </span>
+      </div>
+  
+  </nav>
+    
+  
+
+<div class ="p-3 mb-2 text-white" style="text-align: center;">
+    <h1>Listado de rutas urbanas</h1>
+    <hr class="text-white">
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col text">
+        <button [routerLink]="['/add-ruta/',idUser]"
+                class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+            Agregar rutas
+        </button>
+    </div>
+    <div class="col text-end">
+        <button [routerLink]="['/principal/',idUser]"
+                class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+            Mapa 
+        </button>
+    </div>
+</div>
+
+
+
+<table class="table table-dark table mt-4 animated fadeIn faster">
+    <thead>
+      <tr>
+          <th scope="col ">#</th>
+          <th scope="col">Rutas</th>
+          <th scope="col">Tipo vehículo</th>
+          <th scope="col">Destinos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-active ">
+        <th scope="row">1</th>
+        <td >Progreso 4</td>
+        <td >Camión</td>
+        <td >
+            <button [routerLink]="['/progreso4/',idUser]"
+                class="btn btn-link">
+            <i class="fa"></i>
+            Ver destinos
+        </button>
+        </td>
+      </tr>
+
+      <tr class="table-active ">
+        <th scope="row">2</th>
+        <td >Llanitos</td>
+        <td >Camión</td>
+        <td >
+            <button [routerLink]="['/llanitos/',idUser]"
+                class="btn btn-link">
+            <i class="fa"></i>
+            Ver destinos
+        </button>
+        </td>
+      </tr>
+
+      <tr class="table-active ">
+        <th scope="row">3</th>
+        <td >Allende</td>
+        <td >Combi</td>
+        <td >
+            <button [routerLink]="['/allende/',idUser]"
+                class="btn btn-link">
+            <i class="fa"></i>
+            Ver destinos
+        </button>
+        </td>
+      </tr>
+
+      <tr *ngFor="let ruta of rutas; let i = index" 
+            class="table-active ">
+        <th scope="row">{{ i+4 }}</th>
+        <td >{{ruta.nombreRuta}}</td>
+        <td >
+
+            <label *ngIf="ruta.tipoVehiculo" >Camión</label>
+            <label *ngIf="!ruta.tipoVehiculo" >Combi</label>
+
+        </td>
+        <td >{{ruta.destinos}}</td>
+      </tr>      
+    </tbody>
+  </table>    
+  
+  <!--Pie de pagina-->
+<footer class="page-footer">
+    <div class="container-fluid bg-dark text-white">
+        <div class="links"><a>© 2022 - Todos los derechos reservados.</a></div>
+        <div >
+            <a href="https://www.instagram.com/tecnmcampustepic/">
+                <i class="fab fa-instagram"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <rect x="4" y="4" width="16" height="16" rx="4" />
+                  <circle cx="12" cy="12" r="3" />
+                  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/TecnologicodeTepic">
+                <i class="fab fa-facebook"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg>
+            </a>
+            <a href="https://www.tepic.tecnm.mx/">
+                <i class="fas fa-university"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-school" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                  <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                </svg>
+            </a>            
+        </div>
+    </div>
+  </footer>

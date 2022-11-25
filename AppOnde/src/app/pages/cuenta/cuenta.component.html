@@ -1,0 +1,153 @@
+<!--Encabezado-->
+<nav class="navbar" style="background-color: #e3f2fd; text-align: left;">
+    <!-- Navbar content -->
+    <div class="container-fluid" >
+        <img src="../../../assets/image/logo.png" alt=" Logotipo">
+        <a class="navbar-brand" href="principal.component.html">ONDE!</a>
+        <a class="nav-link active">Mi cuenta</a>
+        <a class="navbar-brand" href="../rutas/rutas.component.html">Rutas</a>
+        <a class="nav-link" [routerLink]="['/desarrolladores/',usuario.id]">Acerca de</a> 
+        <span class="navbar-text">
+          <button class="btn btn-outline-light" type="button"
+          routerLink="/usuario" style="background-color:blue ;">
+              Cerrar sesión
+          </button>
+      </span>
+      </div>
+  
+  </nav>
+
+
+
+<div class="p-5 animate__animated animate__fadeIn faster text-white">
+    <div class = "col">
+        <form (ngSubmit)="guardar( f )"
+        #f = "ngForm">
+            <div class="form-group">
+                <label>Firebase ID</label>
+                <input type="text"
+                    class="form-control"
+                    placeholder="Firebase ID"
+                    [(ngModel)] = "usuario.id"
+                    name = id                    
+                    disabled="disabled">
+                <small class="form-text text-muted ">Este campo es autogenerado</small>
+            </div>
+            
+            <div class="form-group mt-3">
+                <label>Nombre de usuario</label>
+                <input type="text"
+                    class="form-control"
+                    placeholder="Ej. Juan López"
+                    [(ngModel)] = "usuario.nombre"
+                    name = nombre                    
+                    required>                
+            </div>
+            
+            <div class="form-group mt-3">
+                <label>Correo electrónico</label>
+                <input type="mail"
+                    class="form-control"
+                    placeholder="Ej. juanl@dominio.com"                    
+                    [(ngModel)] = "usuario.mail"                    
+                    name = mail
+                    required>                
+            </div>
+
+            <div class="form-group mt-3">
+                <label>Contraseña</label>
+                <input type="password"
+                    class="form-control"
+                    placeholder="*****"                    
+                    [(ngModel)] = "usuario.password"
+                    name = password                    
+                    required>                
+            </div>
+
+            <div class="form-group mt-3">
+                <label>Confirmar contraseña</label>
+                <input type="password"
+                    class="form-control"
+                    placeholder="*****"                    
+                    [(ngModel)] = "confPass"
+                    name = confPass
+                    required>                
+            </div>
+
+            <div class="form-group mt-2">
+                <label>Género</label>
+                <br>
+                <button *ngIf="usuario.genero"
+                        (click)="usuario.genero = false" 
+                        class="btn btn-outline-light w-50" type="button">                     
+                    <i class="fas fa-male"></i>
+                    Hombre
+                </button>
+
+                <button *ngIf="!usuario.genero"
+                    (click)="usuario.genero = true" 
+                    class="btn btn-outline-light w-50" type="button">                     
+                    <i class="fas fa-female"></i>
+                    Mujer
+                </button>
+            </div>
+
+            <hr>
+
+            <div class="form-group text-center">                
+                <div class="col">
+                    <div class="p-3">
+                        <button type="submit"                        
+                            class="btn btn-warning">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>                
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="p-2">
+                        <button type="button" (click)="eliminar()"
+                            class="btn btn-outline-secondary">                            
+                            <i class="fas fa-user-times"></i>
+                            Eliminar cuenta
+                        </button>  
+                    </div>
+                </div>                                
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--Pie de pagina-->
+<footer class="page-footer">
+    <div class="container-fluid bg-dark text-white">
+        <div class="links"><a>© 2022 - Todos los derechos reservados.</a></div>
+        <div >
+            <a href="https://www.instagram.com/tecnmcampustepic/">
+                <i class="fab fa-instagram"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <rect x="4" y="4" width="16" height="16" rx="4" />
+                  <circle cx="12" cy="12" r="3" />
+                  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                </svg>
+            </a>
+            <a href="https://www.facebook.com/TecnologicodeTepic">
+                <i class="fab fa-facebook"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
+                </svg>
+            </a>
+            <a href="https://www.tepic.tecnm.mx/">
+                <i class="fas fa-university"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-school" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#6f32be" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M22 9l-10 -4l-10 4l10 4l10 -4v6" />
+                  <path d="M6 10.6v5.4a6 3 0 0 0 12 0v-5.4" />
+                </svg>
+            </a>            
+        </div>
+    </div>
+  </footer>
