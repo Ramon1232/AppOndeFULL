@@ -22,7 +22,6 @@ import { AddRutaComponent } from './pages/add-ruta/add-ruta.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
 import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { ToastrModule } from 'ngx-toastr';
-import { HorariosComponent } from './pages/horarios/horarios.component';
 import { HorarioAllendeComponent } from './pages/horario-allende/horario-allende.component';
 import { HorarioComponent } from './pages/horario/horario.component';
 import { HorarioInsurgentesComponent } from './pages/horario-insurgentes/horario-insurgentes.component';
@@ -48,7 +47,6 @@ const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
     Progreso4DestComponent,
     AddRutaComponent,
     PrincipalComponent,
-    HorariosComponent,
     HorarioAllendeComponent,
     HorarioComponent,
     HorarioInsurgentesComponent,

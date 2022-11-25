@@ -16,6 +16,10 @@ import { LlanitosDestComponent } from './pages/llanitos-dest/llanitos-dest.compo
 import { AllendeDestComponent } from './pages/allende-dest/allende-dest.component';
 import { AddRutaComponent } from './pages/add-ruta/add-ruta.component';
 import { PrincipalComponent } from './pages/principal/principal.component'
+import { HorarioComponent } from './pages/horario/horario.component'
+import { HorarioInsurgentesComponent } from './pages/horario-insurgentes/horario-insurgentes.component'
+import { HorarioAllendeComponent } from './pages/horario-allende/horario-allende.component'
+import { HorarioLlanitosComponent } from './pages/horario-llanitos/horario-llanitos.component'
 
 const routes: Routes = [
   { path: 'usuario/:id', component: UsuarioComponent },
@@ -31,6 +35,10 @@ const routes: Routes = [
   { path: 'allende/:id', component: AllendeComponent},
   { path: 'allendeDest/:id', component: AllendeDestComponent},
   { path: 'add-ruta/:id', component: AddRutaComponent},
+  { path: 'horario/:id', component:HorarioComponent},
+  { path: 'horario-insurgentes/:id', component:HorarioInsurgentesComponent},
+  { path: 'horario-allende/:id', component:HorarioAllendeComponent},
+  { path: 'horario-llanitos/:id', component:HorarioLlanitosComponent},
   { path: '**', pathMatch: 'full', redirectTo: 'principal' }
 
 ];
