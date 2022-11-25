@@ -130,7 +130,10 @@ export class MapCustomService {
           const lngLat = this.markerDriver.getLngLat();
           console.log('--->', lngLat);
           */
-          this.estaCerca(coords[0],coords[1], position.coords.longitude, position.coords.latitude);
+
+          // Coordenadas Parada TEC [-104.8666240913311, 21.476987876618065]
+          
+          this.estaCerca(coords[0],coords[1], position.coords.longitude, position.coords.latitude );
           this.estaCercaA200M(coords[0],coords[1], position.coords.longitude, position.coords.latitude);
       }
     });  
@@ -195,8 +198,8 @@ export class MapCustomService {
       const puntoA = ((lngU-(lngA))*(lngU-(lngA)))+((latU-(latA))*(latU-(latA)));
       if(puntoA<0.00008 && this.notific){
         this.notific = false;
-        this.toastr.success('Tu transporte esta a punto de llegar', 'ONDE!!!', {
-          positionClass: 'toast-center-center'
+        this.toastr.success('Tu transporte esta a punto de llegar', '2 a 3 minutos', {
+          positionClass: 'toast-top-center'
         });
         console.log("Ahi viene tu camion")
       }
@@ -208,8 +211,8 @@ export class MapCustomService {
       const puntoA = ((lngU-(lngA))*(lngU-(lngA)))+((latU-(latA))*(latU-(latA)));
       if(puntoA<0.0000032406 && this.notific2){
         this.notific2 = false;
-        this.toastr.success('Llegada inminente, sal en putiza XD', 'ONDE!!!', {
-          positionClass: 'toast-center-center'
+        this.toastr.warning('Llegada inminente, Transporte a menos de 200 metros', 'LLEGADA en menos de 1 minuto', {
+          positionClass: 'toast-top-center'
         });
         console.log("Ahi viene tu camion")
       }
