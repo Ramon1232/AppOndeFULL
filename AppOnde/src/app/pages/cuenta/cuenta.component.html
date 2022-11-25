@@ -2,7 +2,7 @@
 <nav class="navbar" style="background-color: #e3f2fd; text-align: left;">
     <!-- Navbar content -->
     <div class="container-fluid" >
-        <img src="../../../favicon.ico" alt="">
+        <img src="../../../assets/image/logo.png" alt=" Logotipo">
         <a class="navbar-brand" href="principal.component.html">ONDE!</a>
         <a class="nav-link active">Mi cuenta</a>
         <a class="navbar-brand" href="../rutas/rutas.component.html">Rutas</a>
@@ -23,16 +23,7 @@
     <div class = "col">
         <form (ngSubmit)="guardar( f )"
         #f = "ngForm">
-            <div class="form-group">
-                <label>Firebase ID</label>
-                <input type="text"
-                    class="form-control"
-                    placeholder="Firebase ID"
-                    [(ngModel)] = "usuario.id"
-                    name = id                    
-                    disabled="disabled">
-                <small class="form-text text-muted ">Este campo es autogenerado</small>
-            </div>
+            
             
             <div class="form-group mt-3">
                 <label>Nombre de usuario</label>
@@ -75,20 +66,20 @@
             </div>
 
             <div class="form-group mt-2">
-                <label>Género</label>
+                <label>Seleccione el cargo</label>
                 <br>
                 <button *ngIf="usuario.genero"
                         (click)="usuario.genero = false" 
                         class="btn btn-outline-light w-50" type="button">                     
                     <i class="fas fa-male"></i>
-                    Hombre
+                    Operador
                 </button>
 
                 <button *ngIf="!usuario.genero"
                     (click)="usuario.genero = true" 
                     class="btn btn-outline-light w-50" type="button">                     
                     <i class="fas fa-female"></i>
-                    Mujer
+                    Supervisor
                 </button>
             </div>
 
