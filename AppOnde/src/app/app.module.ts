@@ -24,6 +24,9 @@ import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
 import { ToastrModule } from 'ngx-toastr';
 import { HorariosComponent } from './pages/horarios/horarios.component';
 import { HorarioAllendeComponent } from './pages/horario-allende/horario-allende.component';
+import { HorarioComponent } from './pages/horario/horario.component';
+import { HorarioInsurgentesComponent } from './pages/horario-insurgentes/horario-insurgentes.component';
+import { HorarioLlanitosComponent } from './pages/horario-llanitos/horario-llanitos.component';
 //import { ToastrModule } from 'ngx-toastr';
 
 
@@ -47,6 +50,9 @@ const config: SocketIoConfig = {url: 'http://localhost:3000', options: {}};
     PrincipalComponent,
     HorariosComponent,
     HorarioAllendeComponent,
+    HorarioComponent,
+    HorarioInsurgentesComponent,
+    HorarioLlanitosComponent,
 
   ],
   imports: [
